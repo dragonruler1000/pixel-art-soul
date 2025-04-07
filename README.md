@@ -42,7 +42,7 @@ This project is currently unlicensed / for personal development.
 
 ## 🙌 Credits
 
-Created by Zachariah Jackson
+Created by Zachariah Jackson  
 Special thanks to the Godot community for tools, tutorials, and support.
 
 ---
