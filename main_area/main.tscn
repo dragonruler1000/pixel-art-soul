@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://c25ruim1pfong"]
+
+[ext_resource type="Script" uid="uid://d21muexhna5hl" path="res://main_area/main.gd" id="1_4ett6"]
+[ext_resource type="PackedScene" uid="uid://b00u15e4scb4d" path="res://player/player.tscn" id="1_k54gj"]
+[ext_resource type="PackedScene" uid="uid://bfly1ctixhb1y" path="res://enemy/enemy.tscn" id="2_hcm7f"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_4ett6"]
+vertices = PackedVector2Array(983, 601.961, 27.8594, 599.031, 20.1328, 18.9766, 983, 18.0078)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(10, 9, 993, 8, 993, 612, 18, 609)])
+
+[node name="Main" type="Node"]
+script = ExtResource("1_4ett6")
+enemy_scene = ExtResource("2_hcm7f")
+
+[node name="Player" parent="." instance=ExtResource("1_k54gj")]
+
+[node name="MobTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="ScoreTimer" type="Timer" parent="."]
+
+[node name="StartTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="StartPosition" type="Marker2D" parent="."]
+position = Vector2(780, 355)
+
+[node name="EnemySpawn" type="Marker2D" parent="."]
+position = Vector2(25, 271)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_4ett6")
+
+[connection signal="hit" from="Player" to="." method="game_over"]
+[connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
+[connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
