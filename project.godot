@@ -15,6 +15,10 @@ run/main_scene="uid://b00u15e4scb4d"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/project_time/plugin.cfg")
+
 [input]
 
 move_up={
