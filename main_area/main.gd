@@ -27,7 +27,7 @@ func _on_mob_timer_timeout() -> void:
 
 	# Set player as the target for pathfinding
 	var player = $Player
-	enemy.set_target_node($Player)
+	enemy.set_target_node(player)
 
 	
 
