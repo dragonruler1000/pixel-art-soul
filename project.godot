@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="Pixel-art_soul"
-run/main_scene="uid://b00u15e4scb4d"
+run/main_scene="uid://c25ruim1pfong"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+DiscordRPCLoader="*res://addons/discord-rpc-gd/nodes/discord_autoload.gd"
+
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/project_time/plugin.cfg")
+enabled=PackedStringArray("res://addons/discord-rpc-gd/plugin.cfg", "res://addons/project_time/plugin.cfg")
 
 [input]
 

@@ -4,6 +4,9 @@ signal hit
 
 @export var speed = 400 # How fast the player will move (pixels/sec).
 var screen_size # Size of the game window.
+@export var max_health: float = 100
+var health: float = max_health
+#@onready var healthbar = $""
 
 func _ready():
 	screen_size = get_viewport_rect().size

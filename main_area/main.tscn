@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c25ruim1pfong"]
+[gd_scene load_steps=6 format=3 uid="uid://c25ruim1pfong"]
 
 [ext_resource type="Script" uid="uid://d21muexhna5hl" path="res://main_area/main.gd" id="1_4ett6"]
 [ext_resource type="PackedScene" uid="uid://b00u15e4scb4d" path="res://player/player.tscn" id="1_k54gj"]
 [ext_resource type="PackedScene" uid="uid://bfly1ctixhb1y" path="res://enemy/enemy.tscn" id="2_hcm7f"]
+[ext_resource type="PackedScene" uid="uid://bl8moyotowyh8" path="res://misc/UI.tscn" id="4_hcm7f"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_4ett6"]
 vertices = PackedVector2Array(983, 601.961, 27.8594, 599.031, 20.1328, 18.9766, 983, 18.0078)
@@ -33,6 +34,8 @@ position = Vector2(25, 271)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_4ett6")
+
+[node name="UI" parent="." instance=ExtResource("4_hcm7f")]
 
 [connection signal="hit" from="Player" to="." method="game_over"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
