@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://bl8moyotowyh8"]
+[gd_scene load_steps=2 format=3 uid="uid://bl8moyotowyh8"]
+
+[ext_resource type="Script" uid="uid://cdtd4y7wj8lwh" path="res://misc/ui.gd" id="1_2t68m"]
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -7,8 +9,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_2t68m")
 
-[node name="HealthBar" type="ProgressBar" parent="."]
+[node name="PlayerHealth" type="ProgressBar" parent="."]
 layout_mode = 0
 offset_left = 359.0
 offset_top = 32.0

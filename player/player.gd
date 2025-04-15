@@ -4,8 +4,8 @@ signal hit
 
 @export var speed = 400 # How fast the player will move (pixels/sec).
 var screen_size # Size of the game window.
-@export var max_health: float = 100
-var health: float = max_health
+@export var damage: float = 10
+var health: float = PlayerVariables.max_health
 #@onready var healthbar = $""
 
 func _ready():
@@ -40,7 +40,8 @@ func start(pos):
 
 func _on_body_entered(_body):
 	print("collided")
-	hide() # Player disappears after being hit.
+	PlayerVariables.current_health - damage
+	#hide() # Player disappears after being hit.
 	hit.emit()
 	# Must be deferred as we can't change physics properties on a physics callback.
 	$CollisionShape2D.set_deferred(&"disabled", true)
