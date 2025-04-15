@@ -1,7 +1,7 @@
 ---
 name: Roadmap Item
 about: Track development tasks and features for the game roadmap
-title: "[Roadmap] <Title of Task>"
+title: "[Roadmap] "
 labels: enhancement, roadmap
 assignees: ''
 
@@ -23,8 +23,7 @@ assignees: ''
 - [ ] Clear description of feature or fix  
 - [ ] All necessary logic implemented  
 - [ ] No game-breaking bugs introduced  
-- [ ] Works in current Godot 4.4 build  
-- [ ] (Optional) Linked to visual scripting if needed  
+- [ ] Works in current Godot 4.4 build   
 
 ---
 
