@@ -7,6 +7,7 @@ signal killed
 var screen_size # Size of the game window.
 @export var damage: float = 10
 var health: float = PlayerVariables.max_health
+var velocity = Vector2.ZERO # The player's movement vector.
 #@onready var healthbar = $""
 
 func _ready():
@@ -15,7 +16,6 @@ func _ready():
 
 
 func _process(delta):
-	var velocity = Vector2.ZERO # The player's movement vector.
 	if Input.is_action_pressed(&"move_right"):
 		velocity.x += 1
 	if Input.is_action_pressed(&"move_left"):
@@ -42,6 +42,7 @@ func start(pos):
 func _on_body_entered(_body):
 	print("collided")
 	PlayerVariables.current_health -= damage
+	
 	hit.emit()
 	print("Health = ", PlayerVariables.current_health)
 	# Must be deferred as we can't change physics properties on a physics callback.
@@ -50,3 +51,7 @@ func _on_body_entered(_body):
 		hide()
 		killed.emit()
 		get_tree().call_group("player", "queue_free")
+		
+#func apply_knockback(enemy_position: Vector2, knockback_strength: float) -> void:
+#	var knockback_direction = (global_position - enemy_position).normalized()
+#	velocity = knockback_direction * knockback_strength

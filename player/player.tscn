@@ -19,4 +19,7 @@ texture = ExtResource("2_rkbax")
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_rkbax")
 
+[node name="KnockBack" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
