@@ -7,7 +7,7 @@ func _ready():
 	new_game()
 
 
-func game_over() -> void:
+func game_over():
 	$ScoreTimer.stop()
 	$MobTimer.stop()
 func new_game():
@@ -16,7 +16,7 @@ func new_game():
 	$StartTimer.start() # Replace with function body.
 
 
-func _on_mob_timer_timeout() -> void:
+func _on_mob_timer_timeout():
 	var enemy = enemy_scene.instantiate()
 
 	# Spawn position

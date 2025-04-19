@@ -1,6 +1,7 @@
 extends Area2D
 
 signal hit
+signal killed
 
 @export var speed = 400 # How fast the player will move (pixels/sec).
 var screen_size # Size of the game window.
@@ -40,8 +41,12 @@ func start(pos):
 
 func _on_body_entered(_body):
 	print("collided")
-	PlayerVariables.current_health - damage
-	#hide() # Player disappears after being hit.
+	PlayerVariables.current_health -= damage
 	hit.emit()
+	print("Health = ", PlayerVariables.current_health)
 	# Must be deferred as we can't change physics properties on a physics callback.
-	$CollisionShape2D.set_deferred(&"disabled", true)
+	#$CollisionShape2D.set_deferred(&"disabled", true)
+	if PlayerVariables.current_health <= 0.0:
+		hide()
+		killed.emit()
+		get_tree().call_group("player", "queue_free")
