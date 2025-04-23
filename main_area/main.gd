@@ -5,11 +5,15 @@ var score
 
 func _ready():
 	new_game()
+	
 
 
 func game_over():
 	$ScoreTimer.stop()
 	$MobTimer.stop()
+	var enemy = enemy_scene.instantiate()
+	enemy.game_over()
+	
 func new_game():
 	score=0
 	$Player.start($StartPosition.position)
