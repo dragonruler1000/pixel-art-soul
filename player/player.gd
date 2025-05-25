@@ -53,6 +53,7 @@ func _on_body_entered(_body):
 		killed.emit()
 		get_tree().call_group("player", "queue_free")
 		
+# TODO: Get player knockback working.
 #func apply_knockback(enemy_position: Vector2, knockback_strength: float) -> void:
-#	var knockback_direction = (global_position - enemy_position).normalized()
-#	velocity = knockback_direction * knockback_strength
+	#var knockback_direction = (global_position - enemy_position).normalized()
+	#velocity = knockback_direction * knockback_strength
