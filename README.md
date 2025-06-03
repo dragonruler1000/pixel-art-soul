@@ -1,3 +1,5 @@
+</br><img src="https://profile-counter.glitch.me/Dragonruler1000-art_soul/count.svg" alt="Visitor Counter"/>
+
 # Pixel Art Soul *(Working Title)*
 
 **Pixel Art Soul** is a 2D isometric pixel art game set on a space colony built on an asteroid or moon.  
