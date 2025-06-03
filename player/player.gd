@@ -15,6 +15,7 @@ var is_invincible: bool = false
 var invincibility_duration: float = 2.0 #seconds
 var invincibility_timer: float =0.0
 #@onready var healthbar = $""
+var equipped_weapon : Node = null
 
 func _ready():
 	screen_size = get_viewport_rect().size
@@ -22,6 +23,8 @@ func _ready():
 
 
 func _process(delta):
+	if Input.is_action_just_pressed("attack") and equipped_weapon:
+		equipped_weapon.attack()
 	# Invincibility countdown
 	if is_invincible:
 		invincibility_timer -= delta
@@ -82,3 +85,9 @@ func apply_knockback(enemy_position: Vector2, knockback_strenght: float):
 	var direction = (global_position - enemy_position).normalized()
 	knockback_velocity = direction * knockback_strenght
 	knockback_timer = knockback_duration
+	
+func equip_weapon(weapon: Node):
+	if equipped_weapon:
+		equipped_weapon.queue_free()
+	equipped_weapon = weapon
+	add_child(equipped_weapon)
