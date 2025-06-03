@@ -24,7 +24,7 @@ This is a **reverse Soulsborne-style** action game inspired by titles like *The 
 
 ## 📦 Tech Stack
 
-- [Godot 4.4](https://godotengine.org/) with GDScript and Orchestrator (visual scripting)
+- [Godot 4.4](https://godotengine.org/) with GDScript
 - Pixel art assets: Isometric Space Colony - monogon
 
 ## 🚀 Getting Started
