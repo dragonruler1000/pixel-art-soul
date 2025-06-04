@@ -10,7 +10,9 @@ height = 176.0
 
 [node name="sword" type="Area2D"]
 position = Vector2(277, 33)
+collision_layer = 2
 script = ExtResource("1_w1idm")
+damage = 2.0
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -20,3 +22,5 @@ texture = SubResource("PlaceholderTexture2D_304gn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_y8jj2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -43,3 +43,7 @@ func _on_score_timer_timeout():
 func _on_start_timer_timeout() -> void:
 	$MobTimer.start()
 	$ScoreTimer.start()
+
+
+func _on_enemy_enemy_killed() -> void:
+	$MobTimer.start()

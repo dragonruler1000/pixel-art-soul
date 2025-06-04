@@ -8,7 +8,8 @@ size = Vector2(128, 126)
 
 [node name="Enemy" type="RigidBody2D"]
 position = Vector2(487, 221)
-collision_mask = 0
+collision_layer = 3
+collision_mask = 2
 script = ExtResource("1_ofsxj")
 metadata/_edit_group_ = true
 
