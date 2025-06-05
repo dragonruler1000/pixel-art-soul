@@ -11,7 +11,6 @@ position = Vector2(487, 221)
 collision_layer = 3
 collision_mask = 2
 script = ExtResource("1_ofsxj")
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(2.62763, 2.50001)
@@ -19,11 +18,19 @@ scale = Vector2(0.213028, 0.213028)
 texture = ExtResource("2_ofsxj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_p200p")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+visible = false
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="EnemyHealth" type="ProgressBar" parent="."]
+offset_top = -98.0
+offset_right = 4.0
+offset_bottom = -71.0
+scale = Vector2(4.5309, 0.957392)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -2,17 +2,21 @@ extends RigidBody2D
 
 signal enemy_killed
 
+@onready var progress_bar: ProgressBar = $EnemyHealth
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 var velocity = Vector2.ZERO
 var player: Node2D = null
 var path_update_timer := 0.0
 var path_update_interval := 0.5 # Update path every half second
-@export var health: float = 10.0
+@export var maxhealth: float = 10.0
+var health: float = maxhealth
 
 func _ready():
 	# Optional tuning
 	nav_agent.path_desired_distance = 8.0
 	nav_agent.target_desired_distance = 8.0
+	progress_bar.min_value = 0
+	progress_bar.max_value = maxhealth
 
 
 func set_target_node(target: Node2D):
@@ -37,6 +41,7 @@ func _physics_process(delta):
 	
 func take_damage(damage: float):
 	health -= damage
+	progress_bar.value = health
 	print("took damage")
 	print("Enemy health = ", health)
 	if health <=0:

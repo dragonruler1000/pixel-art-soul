@@ -17,4 +17,5 @@ offset_left = 359.0
 offset_top = 32.0
 offset_right = 775.0
 offset_bottom = 59.0
+scale = Vector2(1.00629, 1)
 value = 100.0
