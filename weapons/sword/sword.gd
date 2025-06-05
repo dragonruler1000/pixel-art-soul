@@ -7,7 +7,7 @@ extends Area2D
 
 func _process(delta):
 	hitbox.disabled = true
-	if Input.action_press("attack")
+	if Input.action_press("attack"):
 		enable_hitbox()
 
 func enable_hitbox():
