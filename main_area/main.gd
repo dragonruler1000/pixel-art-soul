@@ -26,12 +26,11 @@ func new_game():
 	$StartTimer.start() # Replace with function body.
 
 
-func _on_mob_timer_timeout():
-	#var enemy = enemy_scene.instantiate()
-	if enemies_spawned < 1:
-		# Spawn position
+func _on_mob_timer_timeout() -> void:
+	if get_tree().get_nodes_in_group("enemy").size <= 0:
+		var enemy: Node = enemy_scene.instantiate()
+		if !is_instance_valid( spawn_marker ): print("No valid spawn marker!")
 		enemy.global_position = spawn_marker.global_position
-
 		add_child(enemy)
 		enemies_spawned += 1
 		print(enemies_spawned)
