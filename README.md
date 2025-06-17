@@ -1,3 +1,4 @@
+<img src="https://hackatime-badge.hackclub.com/U07ATTVPPHA/pixel-art-soul"/>
 </br><img src="https://profile-counter.glitch.me/Dragonruler1000-art_soul/count.svg" alt="Visitor Counter"/>
 
 # Pixel Art Soul *(Working Title)*
