@@ -13,6 +13,9 @@ position = Vector2(277, 33)
 collision_layer = 2
 script = ExtResource("1_w1idm")
 damage = 2.0
+stamina_cost = null
+attack_speed = null
+weapon_type = null
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

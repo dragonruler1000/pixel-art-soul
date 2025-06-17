@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b00u15e4scb4d"]
+[gd_scene load_steps=7 format=3 uid="uid://b00u15e4scb4d"]
 
 [ext_resource type="Shader" uid="uid://l28846bt4tyj" path="res://player/player.gdshader" id="1_g1dw6"]
 [ext_resource type="Script" uid="uid://b1cq8fay6e6oy" path="res://player/player.gd" id="1_oul6g"]
 [ext_resource type="Texture2D" uid="uid://dx7tprw304k77" path="res://icon.svg" id="2_rkbax"]
+[ext_resource type="PackedScene" uid="uid://bnd6qnuul4nd8" path="res://weapons/sword/sword.tscn" id="4_yw30f"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g1dw6"]
 shader = ExtResource("1_g1dw6")
@@ -12,7 +13,7 @@ shader_parameter/is_invincible = false
 size = Vector2(128, 132.5)
 
 [node name="Player" type="Area2D"]
-position = Vector2(505, 202)
+position = Vector2(462, 198)
 script = ExtResource("1_oul6g")
 metadata/_edit_group_ = true
 
@@ -27,5 +28,8 @@ shape = SubResource("RectangleShape2D_rkbax")
 
 [node name="KnockBack" type="Timer" parent="."]
 one_shot = true
+
+[node name="sword" parent="." instance=ExtResource("4_yw30f")]
+position = Vector2(-153, 0)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

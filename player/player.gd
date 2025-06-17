@@ -57,7 +57,7 @@ func start(pos):
 	position = pos
 	rotation = 0
 	show()
-	$CollisionShape2D.disabled = false
+	$CollisionShape2D.set_deferred("disabled", false);
 
 
 func _on_body_entered(body):
@@ -78,6 +78,7 @@ func _on_body_entered(body):
 		if PlayerVariables.current_health <= 0.0:
 			hide()
 			killed.emit()
+			queue_free()
 			get_tree().call_group("player", "queue_free")
 			
 # TODO: Get player knockback working.
