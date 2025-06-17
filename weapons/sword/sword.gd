@@ -5,13 +5,13 @@ extends Area2D
 @export var weapon_type: String = "sword"
 @onready var hitbox: CollisionShape2D = $CollisionShape2D
 
-func _process(delta):
-	hitbox.disabled = true
-	if Input.action_press("attack"):
+func _process(_delta):
+	hitbox.set_deferred("disables",true)
+	if Input.is_action_pressed("attack"):
 		enable_hitbox()
 
 func enable_hitbox():
-	$CollisionShape2D.disabled = false
+	$CollisionShape2D.set_deferred("disabled", false)
 
 func _on_body_entered(body):
 	if body.has_method("take_damage"):

@@ -57,7 +57,7 @@ func start(pos):
 	position = pos
 	rotation = 0
 	show()
-	$CollisionShape2D.disabled = false
+	$CollisionShape2D.set_deferred("disabled", false);
 
 
 func _on_body_entered(body):

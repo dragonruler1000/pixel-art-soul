@@ -22,7 +22,7 @@ PlayerVariables="*res://player/player_variables.gd"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/discord-rpc-gd/plugin.cfg", "res://addons/project_time/plugin.cfg")
+enabled=PackedStringArray("res://addons/discord-rpc-gd/plugin.cfg", "res://addons/godot_super-wakatime/plugin.cfg", "res://addons/project_time/plugin.cfg")
 
 [input]
 
