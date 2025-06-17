@@ -28,17 +28,17 @@ func new_game():
 
 func _on_mob_timer_timeout():
 	#var enemy = enemy_scene.instantiate()
+	if enemies_spawned < 1:
+		# Spawn position
+		enemy.global_position = spawn_marker.global_position
 
-	# Spawn position
-	enemy.global_position = spawn_marker.global_position
-	
-	add_child(enemy)
-	enemies_spawned += 1
-	print(enemies_spawned)
+		add_child(enemy)
+		enemies_spawned += 1
+		print(enemies_spawned)
 
-	# Set player as the target for pathfinding
-	var player = $Player
-	enemy.set_target_node(player)
+		# Set player as the target for pathfinding
+		var player = $Player
+		enemy.set_target_node(player)
 
 	
 
