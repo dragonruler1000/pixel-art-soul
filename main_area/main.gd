@@ -27,7 +27,7 @@ func new_game():
 
 
 func _on_mob_timer_timeout() -> void:
-	if get_tree().get_nodes_in_group("enemy").size <= 0:
+	if get_tree().get_nodes_in_group("enemy").size() <= 0:
 		var enemy: Node = enemy_scene.instantiate()
 		if !is_instance_valid( spawn_marker ): print("No valid spawn marker!")
 		enemy.global_position = spawn_marker.global_position

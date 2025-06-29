@@ -35,8 +35,14 @@ position = Vector2(25, 271)
 navigation_polygon = SubResource("NavigationPolygon_4ett6")
 
 [node name="UI" parent="." instance=ExtResource("4_hcm7f")]
+offset_left = -1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = 1.0
 
 [node name="Enemy" parent="." instance=ExtResource("2_hcm7f")]
+z_index = -2
+position = Vector2(128, 268)
 
 [connection signal="killed" from="Player" to="." method="game_over"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
