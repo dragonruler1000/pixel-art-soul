@@ -17,6 +17,7 @@ enemy_scene = ExtResource("2_hcm7f")
 [node name="Player" parent="." instance=ExtResource("1_k54gj")]
 
 [node name="MobTimer" type="Timer" parent="."]
+wait_time = 3.0
 one_shot = true
 
 [node name="ScoreTimer" type="Timer" parent="."]

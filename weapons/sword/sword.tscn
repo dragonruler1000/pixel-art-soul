@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://bnd6qnuul4nd8"]
+[gd_scene load_steps=5 format=3 uid="uid://bnd6qnuul4nd8"]
 
 [ext_resource type="Script" uid="uid://d4khdo2h2wme3" path="res://weapons/sword/sword.gd" id="1_w1idm"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_304gn"]
+[sub_resource type="Curve" id="Curve_w1idm"]
+_data = [Vector2(0.527523, 0.696629), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="CurveTexture" id="CurveTexture_304gn"]
+width = 90
+texture_mode = 1
+curve = SubResource("Curve_w1idm")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y8jj2"]
 radius = 59.0
@@ -16,9 +23,9 @@ damage = 2.0
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0.999985, 7.5)
-scale = Vector2(82, 79)
-texture = SubResource("PlaceholderTexture2D_304gn")
+position = Vector2(1.49997, 5)
+scale = Vector2(1.05556, 84)
+texture = SubResource("CurveTexture_304gn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_y8jj2")

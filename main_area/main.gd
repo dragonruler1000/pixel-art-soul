@@ -29,6 +29,7 @@ func new_game():
 func _on_mob_timer_timeout() -> void:
 	if get_tree().get_nodes_in_group("enemy").size() <= 0:
 		var enemy: Node = enemy_scene.instantiate()
+		enemy.enemy_killed.connect(_on_enemy_enemy_killed)
 		if !is_instance_valid( spawn_marker ): print("No valid spawn marker!")
 		enemy.global_position = spawn_marker.global_position
 		add_child(enemy)
@@ -38,9 +39,6 @@ func _on_mob_timer_timeout() -> void:
 		# Set player as the target for pathfinding
 		var player = $Player
 		enemy.set_target_node(player)
-	else:
-		remove_child(enemy)
-		$MobTimer.start()
 
 	
 
@@ -54,7 +52,6 @@ func _on_start_timer_timeout() -> void:
 
 
 func _on_enemy_enemy_killed():
-	# remove_child(enemy)
 	enemies_spawned -= 1
 	print(enemies_spawned)
 	$MobTimer.start()

@@ -15,6 +15,7 @@ var is_invincible: bool = false
 var invincibility_duration: float = 2.0 #seconds
 var invincibility_timer: float =0.0
 #@onready var healthbar = $""
+# @onready var sword = preload("res://weapons/sword/sword.tscn").instantiate()
 var equipped_weapon : Node = null
 
 func _ready():
